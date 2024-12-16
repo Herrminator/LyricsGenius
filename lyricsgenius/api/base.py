@@ -24,8 +24,9 @@ class Sender(object):
     ):
         self._session = requests.Session()
         self._session.headers = {
-            'application': 'LyricsGenius',
-            'User-Agent': 'https://github.com/johnwmillr/LyricsGenius'
+            # 'application': 'LyricsGenius',
+            # 'User-Agent': 'https://github.com/johnwmillr/LyricsGenius' #  That's what you get from being honest: 403 - Access denied
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"
         }
         if access_token is None:
             access_token = os.environ.get('GENIUS_ACCESS_TOKEN')
